@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Delights | Premium Food Delivery</title> 
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Header -->
+ <header>
+  <div class="container header-container">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <i class="fas fa-utensils"></i>
+      Gourmet Delights
+    </a>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- 🔒 Auth Buttons -->
+    <div class="auth-section">
+      <a href="/login" id="loginBtn" class="btn">Login</a>
+      <a href="/register" id="signupBtn" class="btn">Sign Up</a>
+
+      <div id="userSection" style="display:none;">
+        <span id="welcomeUser" style="margin-right:10px; font-weight:600;"></span>
+        <button id="logoutBtn" class="btn">Logout</button>
+      </div>
+    </div>
+
+    <!-- Actions: Cart and Orders -->
+    <div class="header-actions">
+      <!-- Cart Icon -->
+      <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+
+      <!-- See All Orders Button -->
+      <a href="/user/orders" class="btn orders-btn">
+        <i class="fas fa-receipt"></i> See All Orders
+      </a>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</header>
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Savor the Finest Flavors</h1>
+            <p>Experience culinary excellence with our handcrafted dishes made from the freshest ingredients</p>
+            <a href="#menu" class="btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Categories</h2>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Appetizers">
+                    </div>
+                    <div class="category-content">
+                        <h3>Appetizers</h3>
+                        <p>Start your meal with our delicious starters</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Main Courses">
+                    </div>
+                    <div class="category-content">
+                        <h3>Main Courses</h3>
+                        <p>Hearty dishes to satisfy your hunger</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Desserts">
+                    </div>
+                    <div class="category-content">
+                        <h3>Desserts</h3>
+                        <p>Sweet endings to perfect your meal</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Beverages">
+                    </div>
+                    <div class="category-content">
+                        <h3>Beverages</h3>
+                        <p>Refreshing drinks to complement your meal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Special Menu</h2>
+            </div>
+            
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="appetizers">Appetizers</button>
+                <button class="filter-btn" data-filter="mains">Main Courses</button>
+                <button class="filter-btn" data-filter="desserts">Desserts</button>
+                <button class="filter-btn" data-filter="beverages">Beverages</button>
+            </div>
+            
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be dynamically generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Gourmet Delights was founded in 2010 with a simple mission: to bring exceptional culinary experiences to food lovers everywhere. Our journey began in a small kitchen with big dreams.</p>
+                    <p>Today, we're proud to serve thousands of customers with our carefully crafted dishes made from the finest ingredients sourced from local farmers and trusted suppliers.</p>
+                    <p>Our team of talented chefs combines traditional techniques with innovative approaches to create memorable dining experiences that keep our customers coming back for more.</p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Our Restaurant">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>Have questions or feedback? We'd love to hear from you. Reach out to us through any of the following channels:</p>
+
+        <ul class="contact-details">
+          <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Culinary City, CC 12345</li>
+          <li><i class="fas fa-phone"></i> +1 (234) 567-8900</li>
+          <li><i class="fas fa-envelope"></i> Moizjarwar0@gmail.com</li>
+          <li><i class="fas fa-clock"></i> Mon-Sun: 10:00 AM - 10:00 PM</li>
+        </ul>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send us a Message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- Cart Sidebar -->
+     <!-- Add this to your existing cart sidebar section -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3 class="cart-title">Your Cart</h3>
+        <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <!-- Cart items will be dynamically generated by JavaScript -->
+    </div>
+    
+    <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+    </div>
+    
+    <!-- Updated Checkout Button -->
+    <button class="checkout-btn" id="proceedToCheckout" onclick="proceedToCheckout()">Proceed to Checkout</button>
+</div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically generated by JavaScript -->
+        </div>
+        
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">$0.00</span>
+        </div>
+        
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- NEW MODALS FOR PRODUCT DETAILS AND ORDER FORM -->
+    
+    <!-- Product Details Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <div class="product-modal-image">
+                <img id="modalProductImage" src="" alt="Product Image">
+            </div>
+            <div class="product-modal-details">
+                <div class="product-modal-header">
+                    <div>
+                        <h3 class="product-modal-title" id="modalProductName"></h3>
+                        <p class="product-modal-price" id="modalProductPrice"></p>
+                    </div>
+                    <button class="close-modal" id="closeProductModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <span class="product-modal-badge" id="modalProductBadge"></span>
+                <p class="product-modal-description" id="modalProductDescription"></p>
+                <div class="product-modal-rating" id="modalProductRating"></div>
+                <button class="order-btn" id="orderNowBtn">Add to Cart</button>
+        
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Order Form Modal -->
+    <div class="order-modal" id="orderModal">
+        <div class="order-modal-content">
+            <div class="order-modal-header">
+                <h3 class="order-modal-title">Place Your Order</h3>
+                <button class="close-modal" id="closeOrderModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="order-summary">
+                <h4>Order Summary</h4>
+                <div class="order-summary-item">
+                    <span id="orderItemName"></span>
+                    <span id="orderItemPrice"></span>
+                </div>
+            </div>
+            <form class="order-form" id="orderForm">
+                <div class="form-group">
+                    <label for="customerName">Your Name</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerAddress">Delivery Address</label>
+                    <textarea id="customerAddress" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="customerCity">City</label>
+                    <input type="text" id="customerCity" required>
+                </div>
+                <div class="form-group">
+                    <label for="orderNotes">Special Instructions (Optional)</label>
+                    <textarea id="orderNotes"></textarea>
+                </div>
+                <button type="submit" class="submit-order">Place Order</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Order Confirmation Modal -->
+    <div class="order-modal" id="orderConfirmationModal">
+        <div class="order-modal-content">
+            <div class="order-confirmation">
+                <i class="fas fa-check-circle"></i>
+                <h3>Order Confirmed!</h3>
+                <p>Thank you for your order. We'll contact you shortly with delivery details.</p>
+                <button class="btn" id="closeConfirmationModal">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Gourmet Delights</h3>
+                    <p>Experience the finest culinary creations made with passion and the freshest ingredients.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Culinary City</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> Moizjarwar0@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 10AM - 10PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+    <h3>Newsletter</h3>
+    <p>Subscribe to our newsletter for updates and special offers.</p>
+    
+    <form id="subscribeForm">
+        <input 
+            type="email" 
+            id="subscribeEmail"
+            placeholder="Your Email" 
+            style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;" 
+            required
+        >
+        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+    </form>
+
+    <!-- Message shown after subscribing -->
+    <p id="subscribeMessage" style="margin-top:10px;"></p>
+</div>
+
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gourmet Delights. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+ <script src="javascripts/home.js"></script>
+    
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const userId = localStorage.getItem("userId");
+  const username = localStorage.getItem("username");
+
+  // Buttons and sections
+  const loginBtn = document.getElementById("loginBtn");
+  const signupBtn = document.getElementById("signupBtn"); // make sure you have this in header
+  const userSection = document.getElementById("userSection"); // container for welcome + logout
+  const welcomeUser = document.getElementById("welcomeUser");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  // Show/hide elements based on login
+  if (userId && username) {
+    // ✅ User logged in
+    if (loginBtn) loginBtn.style.display = "none";
+    if (signupBtn) signupBtn.style.display = "none";
+    if (userSection) userSection.style.display = "inline-flex";
+    if (welcomeUser) welcomeUser.textContent = `Welcome, ${username}!`;
+  } else {
+    // 🚫 Not logged in
+    if (loginBtn) loginBtn.style.display = "inline-block";
+    if (signupBtn) signupBtn.style.display = "inline-block";
+    if (userSection) userSection.style.display = "none";
+  }
+
+  // 🔒 Logout
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("userId");
+      localStorage.removeItem("username");
+      window.location.href = "index.html"; // redirect after logout
+    });
+  }
+
+  // Optional: prevent access to restricted actions if not logged in
+  const restrictedLinks = document.querySelectorAll(".requires-login");
+  restrictedLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      if (!userId) {
+        e.preventDefault();
+        alert("Please login first!");
+        window.location.href = "/login";
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+
+</html>
